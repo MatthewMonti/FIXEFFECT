@@ -1,0 +1,11 @@
+useEffect(() => {
+  let mounted = true;
+  load().then(data => {
+    if (mounted) {
+      setState(data);
+    }
+  });
+  return () => {
+    mounted = false;
+  };
+}, []);
